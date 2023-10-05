@@ -1,5 +1,5 @@
 # Personality-Quiz
-
-Katie DeLucio
+Contributers:
 Madeline Abbott
+Katie DeLucio
 Tiffany Leister

@@ -11,4 +11,6 @@ exrtoverted based on their responses to a number of
 multiple choice questions. Users will then be given
 an option to quit or play again. The project will 
 be written using the Java programming language and
-implement JavaFx to display the quiz questions. 
+implement JavaFx to display the quiz questions. The program 
+will contain three classes involving complex data structures 
+using a graphical user interface. 

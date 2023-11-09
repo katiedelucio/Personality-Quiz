@@ -24,11 +24,11 @@ public User() {
 public void setName(String name) {
     this.name = name;
 }
-getter occupation
+//getter occupation
 public String getOccupation() {
     return occupation;
 }
-setter occupation
+//setter occupation
 public void setOccupation(String occupation) {
     this.occupation = occupation;
 }

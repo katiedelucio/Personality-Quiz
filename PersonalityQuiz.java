@@ -1,19 +1,30 @@
-public class PersonalityQuiz{
-    String question, answer;
+//PersonalityQuiz, Tiffany Leister, 11/10/2023
+//Class Quiz that contains the question and answer attributes to later display for user interface 
+
+public class Quiz{
+    String question;
+    Char answer;
 
 public PersonalityQuiz(String question)
 {
     this.question = question;
+    this.answer = answer;
  }
-public void getQuestion(String question)
+public void setQuestion(String question)
+    {
+        this.question = question;
+    }
+public String getQuestion()
 {
 return question;
 }
-public void setAnswer(String answer)
+public void setAnswer(Char answer)
 {
 this.answer = answer;
 }
-public void getAnswer()
+public char getAnswer()
 {
 return answer;
 }
+
+    

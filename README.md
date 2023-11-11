@@ -15,3 +15,4 @@ implement JavaFx to display the quiz questions. The program
 will contain three classes involving complex data structures 
 using a graphical user interface. 
 Tiffany Leister - PersonalityQuiz class 
+Katie DeLucio - User Class

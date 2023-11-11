@@ -2,11 +2,11 @@
 public class Main {
 
     public static void main(String[] args) {
-       User one = new User("Katie", "Tech", 42);
-       one.output();
-       PersonalityQuiz quiz = new PersonalityQuiz quiz;
+        User one = new User("Katie", "Tech", 42);
+        one.output();
+        Quiz quiz = new Quiz();
         String question = quiz.getQuestion();
-        String answer = quiz.getAnswer();
+        char answer = quiz.getAnswer();
         System.out.println("Question: " + question);
 
         quiz.setQuestion("1.");

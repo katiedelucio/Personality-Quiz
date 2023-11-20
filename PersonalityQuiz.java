@@ -6,18 +6,21 @@ public class PersonalityQuiz{
 	
     String question;
     char answer;
+    int number;
     
     // default constructor
     public PersonalityQuiz() {
     	question = "";
     	answer = 0;
+    	
     }
 
     // constructor with values
-    public PersonalityQuiz(String question, char answer)
+    public PersonalityQuiz(String question, int number, char answer)
     {
     this.question = question;
     this.answer = answer;
+    this.number = number;
     }
     
     // Set and get methods for PersonalityQuiz question attributes
@@ -39,5 +42,15 @@ public class PersonalityQuiz{
     {
     	return answer;
     }
+     
+    public void setNumber(int number) 
+    {
+    	 this.number = number;
+    }
+    
+    public int getNumber() {
+    	return number;
+    }
+    
 
 }

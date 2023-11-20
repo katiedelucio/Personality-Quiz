@@ -3,7 +3,7 @@ Class Quiz that contains the question and answerchoice attributes to later displ
 
 public class Quiz{
     String question;
-    Char[] answer;
+    char[] answer;
     
 //Constructor
 public Quiz(String question, char[] answer)
@@ -32,15 +32,16 @@ public void setQuestion(String question)
     }
     
 //getter Answer
-public char getAnswer()
+public char[] getAnswer()
 {
 return answer;
 }
     
 //setter Answer
-public void setAnswer(Char[] answer)
+public void setAnswer(char[] answer)
 {
 this.answer = answer;
+}
 }
 
 

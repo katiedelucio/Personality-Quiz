@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         User one = new User();
-//user info entered
+        //user info entered
         System.out.println("What is your name?");
         String name = scan.nextLine();
         one.setName(name);
@@ -76,6 +76,7 @@ public class Main {
         answer = scan.nextLine();
         answers.add(answer);
         
+        //display user info
         one.output();
         //prints all answers added to arraylist
         System.out.println("Your answers: " + answers);

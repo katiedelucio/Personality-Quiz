@@ -17,7 +17,7 @@ public class Main {
         int age = scan.nextInt();
         scan.nextLine();
         one.setAge(age);
-        one.output();
+        
 
         Quiz quiz = new Quiz();
 
@@ -25,7 +25,7 @@ public class Main {
         ArrayList<String> answers = new ArrayList<String>();
 
         //ask questions, get answers from user input, add answers to arraylist
-        
+        System.out.println("Please answer yes or no to each question.");
         quiz.setQuestion("1. Do you enjoy social gatherings or large crowds?");
         System.out.println("Question: " + quiz.getQuestion());
         answer = scan.nextLine();
@@ -76,8 +76,9 @@ public class Main {
         answer = scan.nextLine();
         answers.add(answer);
         
+        one.output();
         //prints all answers added to arraylist
-        System.out.println(answers);
+        System.out.println("Your answers: " + answers);
     }
 
 }

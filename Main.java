@@ -41,12 +41,12 @@ public class Main {
         answer = scan.nextLine();
         answers.add(answer);
         
-        quiz.setQuestion("4. Would your friends decribe you as reserved?");
+        quiz.setQuestion("4. Would your friends decribe you as outgoing?");
         System.out.println("Question: " + quiz.getQuestion());
         answer = scan.nextLine();
         answers.add(answer);
         
-        quiz.setQuestion("5. Would you rather communicate through text or emails than over the phone?");
+        quiz.setQuestion("5. Would you rather communicate in person than through text or emails?");
         System.out.println("Question: " + quiz.getQuestion());
         answer = scan.nextLine();
         answers.add(answer);
@@ -61,12 +61,12 @@ public class Main {
         answer = scan.nextLine();
         answers.add(answer);
         
-        quiz.setQuestion("8. Do you have reservations when expressing your opinions?");
+        quiz.setQuestion("8. Do you easily express your opinions?");
         System.out.println("Question: " + quiz.getQuestion());
         answer = scan.nextLine();
         answers.add(answer);
         
-        quiz.setQuestion("9. Do you feel as if you have a social battery?");
+        quiz.setQuestion("9. Do you strive to be around people?");
         System.out.println("Question: " + quiz.getQuestion());
         answer = scan.nextLine();
         answers.add(answer);
@@ -78,8 +78,27 @@ public class Main {
         
         //display user info
         one.output();
-        //prints all answers added to arraylist
-        System.out.println("Your answers: " + answers);
+        //prints all answers added to arraylist - test to make sure added to list
+        //System.out.println ("Your answers: " + answers);
+       
+        //count number of "yes" answers
+        String yes = "yes";
+        int count = 0;
+        for (int i = 0; i < answers.size(); i++) {
+            if (answers.get(i).equals(yes)) {
+             count++;   
+            }           
+        }
+        if (count >= 5)
+            System.out.println("You are an extrovert.");
+        else
+            System.out.println("You are an introvert.");
+        }
+   
+            
+        
+        
+            
     }
 
-}
+

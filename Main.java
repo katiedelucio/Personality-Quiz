@@ -85,10 +85,11 @@ public class Main {
         String yes = "yes";
         int count = 0;
         for (int i = 0; i < answers.size(); i++) {
-            if (answers.get(i).equals(yes)) {
+            if (answers.get(i).equalsIgnoreCase(yes)) {
              count++;   
             }           
         }
+        
         if (count >= 5)
             System.out.println("You are an extrovert.");
         else

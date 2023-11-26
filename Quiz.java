@@ -2,33 +2,33 @@
 Class Quiz that contains the question and answerchoice attributes to later display for user interface*/ 
 
 public class Quiz{
-    String question;
+    String[] questions;
     char[] answer;
     
 //Constructor
-public Quiz(String question, char[] answer)
+public Quiz(String[] questions, char[] answer)
 {
-    this.question = question;
+    this.questions = questions;
     this.answer = answer;
  }
     
 //Default Constructor
 public Quiz()
     {
-        this.question = "";
-        this.answer = new char[0];
+        this.questions = null;
+        this.answer = null;
     }
     
 //getter Question
-public String getQuestion()
+public String[] getQuestion()
 {
-return question;
+return questions;
 }
     
 //setter Question
-public void setQuestion(String question)
+public void setQuestion(String[] question)
     {
-        this.question = question;
+        this.questions = question;
     }
     
 //getter Answer

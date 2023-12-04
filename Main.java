@@ -1,13 +1,8 @@
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-/* C211 Project, Group 1 
- * author: Madeline Abbott
- * 11/9/2023
- * Main which implements using a GUI */
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,6 +10,13 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.scene.text.*;
+
+/* C211 Project, Group 1 
+ * author: Madeline Abbott
+ * 11/9/2023
+ * Main which implements using a GUI */
+
+
 
 
 
@@ -96,6 +98,21 @@ public class Main extends Application
 		  
 		  btSubmit.setOnAction(
 		      e -> {
+		      
+		      //store the user responses  
+		      if (yesRadioButton.isSelected()) {
+		    	  (quiz.getAnswer())[index]=true;
+		      }
+		      else if (noRadioButton.isSelected()) {
+		    	  (quiz.getAnswer())[index]=false;
+		      }
+		      else {
+		    	  question.close();
+		    	  question.hide();
+		    	  error();
+		      }
+		      
+		      //continue to next question
 		      if (innerIndex < 9) {
 			  question.close();
 		      questions(index+1);
@@ -110,7 +127,115 @@ public class Main extends Application
 		
 		public void results()
 		{
-			//needs to be written
+			//Count answers
+			boolean[] answers = quiz.getAnswer();
+			int sum = 0;
+			for (boolean ans : answers) {
+				if (ans == true)
+					sum++;
+			}
+			
+			//Create buttons
+			Button btAgain = new Button("Play Again?");
+			Button btQuit = new Button("I'm Done.");
+			
+			//Create VBox, HBox, and elements 
+			Stage results = new Stage();
+			VBox resBox = new VBox();
+			resBox.setSpacing(8);
+			resBox.setPadding(new Insets(10));
+			HBox buttons = new HBox();
+			buttons.setSpacing(8);
+			buttons.setPadding(new Insets(10));
+			buttons.setAlignment(Pos.CENTER);
+			buttons.getChildren().addAll(btAgain, btQuit);
+			resBox.setAlignment(Pos.CENTER);
+			Scene scene = new Scene(resBox, 400, 230);
+			results.setScene(scene);
+			results.show();
+			
+			
+			//Add Labels and descriptions for all possible answers
+			Label extrovert = new Label("Extrovert");
+			Text extrovertDesc = new Text("You are an extrovert, thriving in social settings "
+					+ "\nand drawing energy from interactions with others. "
+					+ "\nOutgoing and expressive, you enjoy being the center "
+					+ "\nof attention and easily engage in conversations. "
+					+ "\nSocial events energize you, and you often seek out "
+					+ "\nnew experiences and connections.");
+			extrovertDesc.setTextAlignment(TextAlignment.CENTER);
+			Label introvert = new Label("Introvert");
+			Text introvertDesc = new Text("You are an introvert, finding strength and "
+					+ "\nrenewal in moments of solitude. Reserved and "
+					+ "\nreflective, you prefer smaller, meaningful "
+					+ "\ninteractions over large social gatherings. "
+					+ "\nTime alone is essential for recharging your"
+					+ "\nenergy, and you excel in focusing deeply on "
+					+ "\nyour thoughts and activities.");
+			introvertDesc.setTextAlignment(TextAlignment.CENTER);
+			Label ambivert = new Label("Ambivert");
+			Text ambivertDesc = new Text("You are an ambivert, balancing the qualities "
+					+ "\nof both extroversion and introversion. Adaptable and "
+					+ "\nflexible, you can navigate social situations with "
+					+ "\nease, but also appreciate and value your time alone. "
+					+ "\nYour social energy levels fluctuate, allowing you to "
+					+ "\nenjoy the best of both worlds, engaging in lively "
+					+ "\nconversations and relishing quiet moments as needed.");
+			ambivertDesc.setTextAlignment(TextAlignment.CENTER);
+			
+			
+			//Display Answers
+			if (sum>5) {
+				resBox.getChildren().addAll(extrovert, extrovertDesc, buttons);
+			}
+			
+			if (sum<5) {
+				resBox.getChildren().addAll(introvert, introvertDesc, buttons);
+			}
+			
+			if (sum==5) {
+				resBox.getChildren().addAll(ambivert, ambivertDesc, buttons);
+			}	
+
+				 
+		    btAgain.setOnAction(
+				e -> {
+					results.close();
+					questions(0);
+				});
+		    
+		    btQuit.setOnAction(
+		        e -> {
+		        	results.close();
+		        	System.exit(0);
+		        });
+			}
+		
+		
+		public void error() {
+			
+			//Create stage and elements
+			Stage error = new Stage();
+			VBox Box = new VBox();
+			Box.setSpacing(8);
+			Box.setPadding(new Insets(10));
+			Scene scene = new Scene(Box, 400, 180);
+			Label errorLabel = new Label("Error");
+			Text errorMsg = new Text("It seems you did not select an answer.");
+			Button btAgain = new Button("Try Again");
+			
+			//Set Stage
+			Box.getChildren().addAll(errorLabel, errorMsg, btAgain);
+			Box.setAlignment(Pos.CENTER);
+			error.setScene(scene);
+			error.show();
+			error.setAlwaysOnTop(true);
+			
+			 btAgain.setOnAction(
+				  e -> {
+				       error.close();
+				  });
+			
 		}
 		
 		public static void main(String[] args) {
@@ -128,7 +253,11 @@ public class Main extends Application
 			questions[7] = "Do you easily express your opinions?";
 			questions[8] = "Do you strive to be around people?";
 			questions[9] = "Are you more open in conversations?";
-			
+			boolean[] answers = new boolean[10];
+			for (int i = 0; i<10; i++) {
+				answers[i]=false;
+			}
+			quiz.setAnswer(answers);
 			
 			QuizGUI.launch(args);
 				

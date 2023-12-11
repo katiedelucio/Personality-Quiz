@@ -43,11 +43,14 @@ public class Main extends Application
 	    TextField occupation = new TextField("Occupation");
 
 	//Add to VBox
-	    quizBox.getChildren().add(questionLabel);
-	    quizBox.getChildren().add(name);
-	    quizBox.getChildren().add(age);
-	    quizBox.getChildren().add(occupation);
-	    quizBox.getChildren().add(btSubmit);
+        quizBox.getChildren().add(questionLabel);
+        quizBox.getChildren().add(nameLabel);
+        quizBox.getChildren().add(name);
+        quizBox.getChildren().add(ageLabel);
+        quizBox.getChildren().add(age);
+        quizBox.getChildren().add(occupationLabel);
+        quizBox.getChildren().add(occupation);
+        quizBox.getChildren().add(btSubmit);
 	    
 	//Creating the scene to output
 	  Scene scene = new Scene(quizBox, 300, 200);

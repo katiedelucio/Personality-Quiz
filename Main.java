@@ -53,7 +53,7 @@ public class Main extends Application
         quizBox.getChildren().add(btSubmit);
 	    
 	//Creating the scene to output
-	  Scene scene = new Scene(quizBox, 300, 200);
+	  Scene scene = new Scene(quizBox, 300, 300);
 	  stage.setScene(scene);
 	  stage.show();
 	  
@@ -261,7 +261,7 @@ public class Main extends Application
 			}
 			quiz.setAnswer(answers);
 			
-			QuizGUI.launch(args);
+			launch(args);
 				
 			
 			}

@@ -23,6 +23,7 @@ import javafx.scene.text.*;
 public class Main extends Application 
 	{
 	public static Quiz quiz = new Quiz();
+	public static User user = new User();
 
 		public void start(Stage stage)
 	{
@@ -60,7 +61,9 @@ public class Main extends Application
 	  btSubmit.setOnAction(
 	            e -> { 
 	            //Add info to profile
-	            User user = new User (name.getText(), occupation.getText(), Integer.parseInt(age.getText()));
+	            user.setName(name.getText());
+	            user.setOccupation(occupation.getText());
+	            user.setAge(Integer.parseInt(age.getText()));
 	            stage.close();
 	            questions(0);
 	            }); 
@@ -255,10 +258,12 @@ public class Main extends Application
 			questions[7] = "Do you easily express your opinions?";
 			questions[8] = "Do you strive to be around people?";
 			questions[9] = "Are you more open in conversations?";
+			
 			boolean[] answers = new boolean[10];
 			for (int i = 0; i<10; i++) {
 				answers[i]=false;
 			}
+			
 			quiz.setAnswer(answers);
 			
 			launch(args);
@@ -269,6 +274,8 @@ public class Main extends Application
 
 	}
 	
+
+	// THIS IS THE CODE TO USE WITHOUT JAVAFC
 	//public static Quiz quiz = new Quiz();
 	
 	

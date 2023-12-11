@@ -107,9 +107,8 @@ public class Main extends Application
 		    	  (quiz.getAnswer())[index]=false;
 		      }
 		      else {
-		    	  question.close();
-		    	  question.hide();
 		    	  error();
+		    	  return;
 		      }
 		      
 		      //continue to next question

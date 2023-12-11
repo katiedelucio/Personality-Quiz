@@ -14,5 +14,6 @@ be written using the Java programming language and
 implement JavaFx to display the quiz questions. The program 
 will contain three classes involving complex data structures 
 using a graphical user interface. 
-Tiffany Leister - Quiz class 
+Tiffany Leister - Quiz Xlass 
 Katie DeLucio - User Class
+Madeline Abbott - Main Class
